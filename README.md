@@ -75,6 +75,8 @@ The follow links contains previous trained models and logs.
    * Train: /data/yiwei/VOC2007/Train
    * Test: /data/yiwei/VOC2007/Test
 
+* Place the downloaded datasets in the dataset/Train and dataset/Test folder
+
 ---
 
 ### Environment setup
