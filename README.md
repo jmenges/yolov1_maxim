@@ -2,6 +2,7 @@
 This repo covers the MAX78000 model training and synthesis pipeline for the YOLO v1 model.
 
 This is a slightly modified version of the original repo by Guanchu Wang (gw22@rice.edu) & Yi-Wei Chen (yiwei_chen@tamu.edu).
+
 Changes:
 - moved some files into the history folder that were not in use
 - changed some static paths for the datasets
