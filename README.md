@@ -50,6 +50,7 @@ $ pip install tensorboard matplotlib numpy colorama yamllint onnx PyGithub GitPy
 ```
 
 Its not required to setup the other packages for the ai8x-training repo that is cloned into the subfolder.
+
 The ai8x-synthesis has to be setup as described in the repo.
 
 
