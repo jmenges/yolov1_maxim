@@ -34,8 +34,10 @@ $ cd yolov1_maxim
 $ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-training.git
 $ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-synthesis.git
 
-# in your virtual environment
+# in your virtual environment (same process with pyenv as described in ai8x-training repo)
 # install pytorch for NVIDIA RTX A5000
+$ pyenv local 3.8.11
+$ python -m venv venv --prompt yolov1_maxim
 $ pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 
 # install distiller
@@ -46,6 +48,9 @@ $ pip install -e .
 # install other packages
 $ pip install tensorboard matplotlib numpy colorama yamllint onnx PyGithub GitPython opencv-python
 ```
+
+Its not required to setup the other packages for the ai8x-training repo that is cloned into the subfolder.
+The ai8x-synthesis has to be setup as described in the repo.
 
 
 ---
