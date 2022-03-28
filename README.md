@@ -5,7 +5,7 @@ This repo covers the MAX78000 model training and synthesis pipeline for the YOLO
 
 ### Role of each Python script:
 
-* YOLO_V1_Train_QAT.py: Layer-wise QAT; set args.qat = True to quantize layers 1, 2, ..., 24 are quantized in epoch 100, 200, ..., 2400; set args.fuse = True to fuse BN layers 1, 2, ..., 24 are in epoch 2500, 2600, ..., 4800.
+* YOLO_V1_Train_QAT.py: Python script used to train the network
 
 * YOLO_V1_Test.py: Fake INT8 test of the model; change the directory of weight file (*.pth) to test different models.
 
@@ -16,10 +16,6 @@ This repo covers the MAX78000 model training and synthesis pipeline for the YOLO
 * yolov1_bn_model.py: Define the structure of the deep neural network.
 
 * YOLO_V1_LossFunction.py: Define the loss function.
-
-* weights/YOLO_V1_Z_5_450_Guanchu-BN_bs16_quant1_3000.pth: Model parameter after 3000 epoch training, where args.qat = True and args.fuse = False. 
-
-* Weights/YOLO_V1_Z_5_450_Guanchu-BN_bs16_quant1_4000.pth: Model parameter after 4000 epoch training, where args.qat = True and args.fuse = False. 
 
 
 ---
