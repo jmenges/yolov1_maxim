@@ -1,6 +1,12 @@
 # yolov1_maxim
 This repo covers the MAX78000 model training and synthesis pipeline for the YOLO v1 model.
 
+This is a slightly modified version of the original repo by Guanchu Wang (gw22@rice.edu) & Yi-Wei Chen (yiwei_chen@tamu.edu).
+Changes:
+- moved some files into the history folder that were not in use
+- changed some static paths for the datasets
+- added argument parser to the YOLO_V1_Test.py python script
+
 ---
 
 ### Role of each Python script:
@@ -16,6 +22,31 @@ This repo covers the MAX78000 model training and synthesis pipeline for the YOLO
 * yolov1_bn_model.py: Define the structure of the deep neural network.
 
 * YOLO_V1_LossFunction.py: Define the loss function.
+
+
+---
+
+### Environment setup
+Note that Python >= 3.8
+```bash
+$ git clone git@github.com:YIWEI-CHEN/yolov1_maxim.git
+$ cd yolov1_maxim
+# note that ai8x-training and ai8x-synthesis should in the project root (e.g., yolov1_maxim)
+$ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-training.git
+$ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-synthesis.git
+
+# in your virtual environment
+# install pytorch for NVIDIA RTX A5000
+$ pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+
+# install distiller
+$ cd yolov1_maxim/ai8x-training/distiller
+# remove lines of numpy, torch, torchvision in requirements.txt
+$ pip install -e .
+
+# install other packages
+$ pip install tensorboard matplotlib numpy colorama yamllint onnx PyGithub GitPython opencv-python
+```
 
 
 ---
@@ -76,30 +107,6 @@ The follow links contains previous trained models and logs.
    * Test: /data/yiwei/VOC2007/Test
 
 * Place the downloaded datasets in the dataset/Train and dataset/Test folder
-
----
-
-### Environment setup
-Note that Python >= 3.8
-```bash
-$ git clone git@github.com:YIWEI-CHEN/yolov1_maxim.git
-$ cd yolov1_maxim
-# note that ai8x-training and ai8x-synthesis should in the project root (e.g., yolov1_maxim)
-$ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-training.git
-$ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-synthesis.git
-
-# in your virtual environment
-# install pytorch for NVIDIA RTX A5000
-$ pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
-
-# install distiller
-$ cd yolov1_maxim/ai8x-training/distiller
-# remove lines of numpy, torch, torchvision in requirements.txt
-$ pip install -e .
-
-# install other packages
-$ pip install tensorboard matplotlib numpy colorama yamllint onnx PyGithub GitPython opencv-python
-```
 
 ---
 ### Reference
