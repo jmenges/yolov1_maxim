@@ -38,7 +38,8 @@ $ git clone --recursive https://github.com/MaximIntegratedAI/ai8x-synthesis.git
 # install pytorch for NVIDIA RTX A5000
 $ pyenv local 3.8.11
 $ python -m venv venv --prompt yolov1_maxim
-$ pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+$ source venv/bin/activate
+$ (yolov1_maxim) pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 
 # install distiller
 $ cd yolov1_maxim/ai8x-training/distiller
