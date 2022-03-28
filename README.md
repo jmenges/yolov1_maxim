@@ -67,21 +67,11 @@ Run 'python YOLO_V1_Train_QAT.py'.
 
 2. Run YOLO_V1_Test.py. (python3 YOLO_V1_Test.py or using Pycharm)
 
-
----
-
-### How to do real INT8 testing?
-
-We intend to focus on the real INT8 testing after the model has passed the Fake INT8 testing. Hence, YOLO_V1_Test_INT8.py, nms.py, and sigmoid.py are useless in the current stage.
-
-
 ---
 
 ### How to generate the checkpoint file of our model?
 
-1. Open YOLO_V1_Test.py and uncomment lines 14, 15, and 29-36.
-
-2. Run YOLO_V1_Test.py to generate the checkpoint file in directory ./weights/. Then, you can quantize the checkpoint using ai8x-synthesis.
+Run python YOLO_V1_Test.py --gen_checkpoint to generate the distilled checkpoint file. Afterwards you can quantize the checkpoint using ai8x-synthesis.
 
 
 ---
@@ -118,3 +108,5 @@ The follow links contains previous trained models and logs.
 * Guanchu Wang (gw22@rice.edu)
   
 * Yi-Wei Chen (yiwei_chen@tamu.edu)
+
+* Jonas Menges (dev.menges.jonas@gmail.com)
