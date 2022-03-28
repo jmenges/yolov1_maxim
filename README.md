@@ -16,8 +16,6 @@ Changes:
 
 * YOLO_V1_Test.py: Fake INT8 test of the model; change the directory of weight file (*.pth) to test different models.
 
-* YOLO_V1_Test_INT8.py: Real INT8 test of the model; no involved in the current stage.
-
 * YOLO_V1_DataSet_small.py: Preprocess the VOC2007 dataset.
 
 * yolov1_bn_model.py: Define the structure of the deep neural network.
@@ -54,9 +52,9 @@ $ pip install tensorboard matplotlib numpy colorama yamllint onnx PyGithub GitPy
 
 ### How to train the YOLO model?
 
-1. Put this folder ('code') and the 'dataset' folder to 'ai8x-training', where ai8x.py is in the same directory.
+After initializing the repo as described above
 
-2. Run 'python3 YOLO_V1_Train_QAT.py --gpu 0 --qat True --fuse False'.
+Run 'python YOLO_V1_Train_QAT.py'.
 
     * You can change the hyperparameter as you want. But there is no need to do this because the current hyperparameters work for our Layer-wise QAT training.
 
